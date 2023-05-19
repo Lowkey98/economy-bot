@@ -1,0 +1,25 @@
+{
+  "name": "economy-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lowkey98/economy-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lowkey98/economy-bot/issues"
+  },
+  "homepage": "https://github.com/Lowkey98/economy-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.11.0",
+    "djs-commander": "^0.0.45",
+    "dotenv": "^16.0.3"
+  }
+}
