@@ -1,7 +1,8 @@
-
 require('dotenv/config')
 const { Client , IntentsBitField } = require('discord.js')
-
+const { CommandHandler } = require('djs-commander')
+const { default: mongoose } = require('mongoose')
+const path = require('path')
 const client = new Client({
     intents : [
         IntentsBitField.Flags.Guilds,
@@ -10,7 +11,13 @@ const client = new Client({
         IntentsBitField.Flags.MessageContent,
     ]})
 
-client.on('ready', () => {
-    console.log("BOT IS ONLINE");
-})
-client.login(process.env.TOKEN)
+new CommandHandler({
+        client,
+        eventsPath : path.join(__dirname, "events"),
+        commandsPath : path.join(__dirname, "commands")
+});
+
+(async () => {
+    await mongoose.connect(process.env.MONGODB_URI);
+    client.login(process.env.TOKEN)
+})();
