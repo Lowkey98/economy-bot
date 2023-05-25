@@ -34,6 +34,5 @@ module.exports = {
     } catch (err) {
       console.log(err);
     }
-    interaction.reply("here is your daily reward");
   },
 };
